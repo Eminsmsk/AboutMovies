@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:icon="@drawable/ic_baseline_local_movies_24"
+        android:title="About Movies" />
+
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/drawer_movies"
+                android:title="Movies" />
+
+
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/drawer_genres"
+                android:title="Genres" />
+        </menu>
+    </item>
+
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/drawer_watchlist"
+                android:title="My Watchlist" />
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/drawer_settings"
+                android:title="Settings" />
+        </menu>
+    </item>
+
+    <item android:title="">
+        <menu>
+            <item
+                android:id="@+id/drawer_about"
+                android:title="About" />
+        </menu>
+    </item>
+
+
+</menu>

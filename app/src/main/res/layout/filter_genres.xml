@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+
+    <EditText
+        android:id="@+id/editTextReleaseYearLte"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/ReleaseYearLte"
+        app:layout_constraintEnd_toEndOf="@+id/editTextReleaseYearGte"
+        app:layout_constraintTop_toTopOf="@+id/ReleaseYearLte"
+        app:layout_constraintVertical_bias="0.483" />
+
+    <TextView
+        android:id="@+id/ReleaseYearLte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="53dp"
+        android:text="Release Year &lt;"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/ReleaseYearGte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ReleaseYearGte" />
+
+    <TextView
+        android:id="@+id/RatingGte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="96dp"
+        android:layout_marginLeft="96dp"
+        android:layout_marginEnd="23dp"
+        android:layout_marginRight="23dp"
+        android:text="Rating &gt;"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="@+id/editTextRatingGte"
+        app:layout_constraintEnd_toStartOf="@+id/editTextRatingGte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/editTextRatingGte" />
+
+    <TextView
+        android:id="@+id/RatingLte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="102dp"
+        android:layout_marginLeft="102dp"
+        android:layout_marginTop="62dp"
+        android:layout_marginEnd="22dp"
+        android:layout_marginRight="22dp"
+        android:text="Rating &lt;"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/RatingGte"
+        app:layout_constraintEnd_toStartOf="@+id/editTextRatingLte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RatingGte" />
+
+    <EditText
+        android:id="@+id/editTextRatingLte"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/RatingLte"
+        app:layout_constraintEnd_toEndOf="@+id/editTextRatingGte"
+        app:layout_constraintTop_toTopOf="@+id/RatingLte" />
+
+    <EditText
+        android:id="@+id/editTextRatingGte"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginTop="44dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintStart_toEndOf="@+id/RatingGte"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ReleaseYearGte"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="57dp"
+        android:text="Release Year &gt;"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/RatingLte"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RatingLte"
+        tools:ignore="HardcodedText" />
+
+    <EditText
+        android:id="@+id/editTextReleaseYearGte"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:ems="10"
+        android:inputType="number"
+        app:layout_constraintBottom_toBottomOf="@+id/ReleaseYearGte"
+        app:layout_constraintEnd_toEndOf="@+id/editTextRatingLte"
+        app:layout_constraintTop_toTopOf="@+id/ReleaseYearGte" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

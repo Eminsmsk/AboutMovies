@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/SortGenre"
+        android:icon="@drawable/ic_baseline_sort_24"
+        android:title="Sort"
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/FilterGenre"
+        android:icon="@drawable/ic_baseline_filter_list_24"
+        android:title="Filter"
+        app:showAsAction="always" />
+</menu>
