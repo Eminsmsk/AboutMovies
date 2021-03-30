@@ -43,7 +43,9 @@ public class WatchlistAdapter extends RecyclerView.Adapter<WatchlistAdapter.Card
         final Movie film = watchList.get(position);
 
         holder.movieName.setText(film.getTitle());
-        holder.movieYear.setText(film.getReleaseDate().substring(0, 4) + " |");
+        if (!film.getReleaseDate().isEmpty())
+            holder.movieYear.setText(film.getReleaseDate().substring(0, 4) + " |");
+
         holder.movieRuntime.setText(String.valueOf(film.getRuntime()) + " minutes");
         holder.movieRating.setText(film.getVoteAverage());
         StringBuilder stringBuilder = new StringBuilder();
@@ -63,7 +65,7 @@ public class WatchlistAdapter extends RecyclerView.Adapter<WatchlistAdapter.Card
             public void onClick(View view) {
 
                 Intent intent = new Intent(mContext, DetailsActivity.class);
-
+                intent.putExtra("id", String.valueOf(film.getId()));
                 mContext.startActivity(intent);
 
             }

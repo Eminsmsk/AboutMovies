@@ -119,7 +119,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentArrayList.clear();
             fragmentNameArrayList.clear();
         }
-        fragmentArrayList.add(new GetMoviesWithCategory("https://api.themoviedb.org/3/search/movie?api_key=96802848a8923e21683a659225709332&query=" + query + "&language=en-US&page="));
+        fragmentArrayList.add(new GetMoviesWithCategory("https://api.themoviedb.org/3/search/movie?api_key=96802848a8923e21683a659225709332&query=" + query + "&page="));
         MyViewPageAdapter adapter = new MyViewPageAdapter(this);
         viewPager2.setAdapter(adapter);
 
@@ -134,7 +134,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             fragmentArrayList.clear();
             fragmentNameArrayList.clear();
         }
-        fragmentArrayList.add(new GetMoviesWithCategory("https://api.themoviedb.org/3/search/movie?api_key=96802848a8923e21683a659225709332&query=" + newText + "&language=en-US&page="));
+        fragmentArrayList.add(new GetMoviesWithCategory("https://api.themoviedb.org/3/search/movie?api_key=96802848a8923e21683a659225709332&query=" + newText + "&page="));
         MyViewPageAdapter adapter = new MyViewPageAdapter(this);
         viewPager2.setAdapter(adapter);
 

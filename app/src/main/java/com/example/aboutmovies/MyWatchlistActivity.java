@@ -88,7 +88,7 @@ public class MyWatchlistActivity extends AppCompatActivity {
 
         watchList.clear();
         for (int i = 0; i < items.size(); i++) {
-            System.out.println("***asdasdas***");
+
             String url = baseUrl + String.valueOf(items.get(i).getItemID()) + apiKey;
             int finalI = i;
             JsonObjectRequest jsonRequest = new JsonObjectRequest
@@ -113,7 +113,7 @@ public class MyWatchlistActivity extends AppCompatActivity {
                                         response.getString("vote_average"),
                                         response.getInt("id"));
                                 temp.add(m);
-                                System.out.println("*********** " + m.getTitle());
+
 
                                 if (flag) {
                                     watchList = (ArrayList<Movie>) temp.clone();

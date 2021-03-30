@@ -69,6 +69,7 @@ public class GetMoviesWithCategory extends Fragment {
 
         String url = Baseurl + String.valueOf(pageNo);
 
+
         ArrayList<Movie> filmler = new ArrayList<>();
 
         JsonObjectRequest jsonRequest = new JsonObjectRequest
@@ -94,13 +95,26 @@ public class GetMoviesWithCategory extends Fragment {
                                         , j.getString("title")
                                         , j.getString("poster_path")
 
-                                        , j.getString("release_date")
 
                                         , j.getString("vote_average")
                                         , j.getInt("id")
 
                                         , j.getInt("vote_count")
                                 );
+                                final StringBuilder release_date = new StringBuilder();
+                                try {
+                                    release_date.append(j.getString("release_date"));
+
+
+                                } catch (Exception e) {
+                                    continue;
+                                } finally {
+                                    m.setReleaseDate(release_date.toString());
+                                }
+
+                                // ??????
+                                if (m.getPosterPath().equalsIgnoreCase("null"))
+                                    continue;
 
                                 filmler.add(m);
 

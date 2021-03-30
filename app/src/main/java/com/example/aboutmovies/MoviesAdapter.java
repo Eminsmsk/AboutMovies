@@ -66,7 +66,7 @@ public class MoviesAdapter extends RecyclerView.Adapter<MoviesAdapter.CardTasari
             public void onClick(View view) {
 
                 Intent intent = new Intent(mContext, DetailsActivity.class);
-
+                intent.putExtra("id", String.valueOf(film.getId()));
                 mContext.startActivity(intent);
 
             }

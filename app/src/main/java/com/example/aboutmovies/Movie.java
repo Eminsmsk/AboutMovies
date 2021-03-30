@@ -2,6 +2,7 @@ package com.example.aboutmovies;
 
 import java.util.List;
 
+import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 public class Movie {
@@ -80,7 +81,20 @@ public class Movie {
         this.id = id;
     }
 
-    public Movie(String overview, String title, String posterPath, String releaseDate, String voteAverage, int id, int voteCount) {
+    public Movie(String title, List<Genre> genres, int runtime, String posterPath, String releaseDate, String voteAverage, int id, String backdropPath, String overview, String originalLanguage) {
+        this.title = title;
+        this.genres = genres;
+        this.runtime = runtime;
+        this.posterPath = posterPath;
+        this.releaseDate = releaseDate;
+        this.voteAverage = voteAverage;
+        this.id = id;
+        this.backdropPath = backdropPath;
+        this.overview = overview;
+        this.originalLanguage = originalLanguage;
+    }
+
+    public Movie(String overview, String title, String posterPath, String voteAverage, int id, int voteCount) {
         this.overview = overview;
 
         this.title = title;
