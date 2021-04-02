@@ -1,6 +1,10 @@
 package com.example.aboutmovies;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.content.Intent;
 import android.net.Uri;
@@ -50,6 +54,8 @@ public class DetailsActivity extends YouTubeBaseActivity {
     private YouTubePlayerView videoViewTrailer;
     private YouTubePlayer.OnInitializedListener onInitializedListener;
     private MediaController mediaController;
+    private RecyclerView castRV;
+    private CastAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +74,9 @@ public class DetailsActivity extends YouTubeBaseActivity {
         textViewTrailer = findViewById(R.id.textViewTrailer);
         mediaController = new MediaController(this);
         videoViewTrailer = findViewById(R.id.videoViewTrailer);
+        castRV = findViewById(R.id.castRV);
+        castRV.setHasFixedSize(true);
+        castRV.setLayoutManager(new LinearLayoutManager(getApplicationContext(), RecyclerView.HORIZONTAL, false));
 
 
         Intent intent = getIntent();
@@ -171,33 +180,27 @@ public class DetailsActivity extends YouTubeBaseActivity {
                                 textViewWriters.setText(writers.substring(0, writers.lastIndexOf(",")).toString());
                             else
                                 textViewWriters.setText("-");
-                            /*
-                            List<Genre> g = new ArrayList<>();
-                            Movie m = new Movie(response.getString("title"),
-                                    g,
-                                    response.getInt("runtime"),
-                                    response.getString("poster_path"),
-                                    response.getString("release_date"),
-                                    response.getString("vote_average"),
-                                    response.getInt("id"),
-                                    response.getString("backdrop_path"),
-                                    response.getString("overview"),
-                                    response.getString("original_language"));
-                            Glide.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w500" + m.getPosterPath())
-                                    .into(imageViewDetails);
-                            textViewMovieName.setText(m.getTitle());
-                            textViewDescription.setText(m.getOverview());
-                            textViewRate.setText(m.getVoteAverage()+"       |");
-                            textViewReleaseDate.setText(m.getReleaseDate()+"        |");
-                            textViewRunTime.setText(String.valueOf(m.getRuntime())+" min");
-                            StringBuilder stringBuilder = new StringBuilder();
-                            for (int i = 0; i < g.size(); i++) {
-                                stringBuilder.append(g.get(i).getName().toString());
-                                if (g.size() > 1 && i != g.size() - 1)
-                                    stringBuilder.append(", ");
+
+                            JSONArray castArray = response.getJSONArray("cast");
+                            List<Cast> castList = new ArrayList<>();
+                            for (int i = 0; i < castArray.length(); i++) {
+
+                                JSONObject j = castArray.getJSONObject(i);
+
+                                Cast c = new Cast(j.getString("name"),
+                                        j.getString("character"),
+                                        j.getString("profile_path")
+                                );
+
+                                if (j.getString("known_for_department").equalsIgnoreCase("Acting")) {
+                                    castList.add(c);
+                                    System.out.println("--> " + c.getRealName());
+                                }
+
+
                             }
-                            textViewGenres.setText(stringBuilder.toString());
-                        */
+                            adapter = new CastAdapter(getApplicationContext(), castList);
+                            castRV.setAdapter(adapter);
 
 
                         } catch (JSONException e) {
