@@ -120,7 +120,7 @@ public class DetailsActivity extends YouTubeBaseActivity {
                                     response.getString("overview"),
                                     response.getString("original_language"));
 
-
+System.out.println("devam");
                             Glide.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w500" + m.getPosterPath())
 
                                     //        .format(DecodeFormat.PREFER_ARGB_8888)
