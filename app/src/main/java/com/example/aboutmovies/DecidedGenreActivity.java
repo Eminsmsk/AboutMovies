@@ -40,7 +40,8 @@ public class DecidedGenreActivity extends AppCompatActivity {
         genreToolbar.setTitleTextColor(getResources().getColor(R.color.myPurple));
         genreToolbar.setSubtitle(getIntent().getStringExtra("genreName"));
         genreToolbar.setSubtitleTextColor(getResources().getColor(R.color.myPurple));
-        genreToolbar.setTitleMargin(200, 0, 0, 0);
+        genreToolbar.setTitleMargin(300, 0, 0, 0);
+        setSupportActionBar(genreToolbar);
 
         fragmentManager = getSupportFragmentManager();
         fragmentTransaction = fragmentManager.beginTransaction();
@@ -72,8 +73,8 @@ public class DecidedGenreActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.addgenrefilter, menu);
 
+        getMenuInflater().inflate(R.menu.addgenrefilter, menu);
         return super.onCreateOptionsMenu(menu);
     }
 

@@ -45,7 +45,7 @@ public class GenresActivity extends AppCompatActivity {
         genresToolbar = findViewById(R.id.genresToolbar);
         imageViewBackGenres = findViewById(R.id.imageViewBackGenres);
         genresToolbar.setTitle("Genres");
-        genresToolbar.setTitleMargin(200, 0, 0, 0);
+        genresToolbar.setTitleMargin(300, 0, 0, 0);
         genresToolbar.setTitleTextColor(getResources().getColor(R.color.myPurple));
         genresRV.setHasFixedSize(true);
         genresRV.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false));

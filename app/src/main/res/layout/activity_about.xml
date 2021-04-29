@@ -13,6 +13,7 @@
         android:background="@color/myYellow"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/imageViewBackAbout"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -32,6 +33,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/cardview_default_radius"
+        android:layout_marginTop="48dp"
         android:layout_marginBottom="156dp"
         android:background="@color/myDarkPurple"
         android:fontFamily="cursive"
@@ -47,5 +49,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbarAbout" />
 </androidx.constraintlayout.widget.ConstraintLayout>

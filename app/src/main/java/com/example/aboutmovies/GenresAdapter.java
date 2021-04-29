@@ -12,6 +12,8 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
+
 import java.util.List;
 
 public class GenresAdapter extends RecyclerView.Adapter<GenresAdapter.CardTasarimTutucu> {
@@ -35,9 +37,12 @@ public class GenresAdapter extends RecyclerView.Adapter<GenresAdapter.CardTasari
         final Genre genre = genreList.get(position);
 
         holder.genreName.setText(genre.getName());
-        holder.genreImage.setImageResource(mContext.getResources().getIdentifier(genre.getImageName(), "drawable", mContext.getPackageName()));
-
-
+        // holder.genreImage.setImageResource(mContext.getResources().getIdentifier(genre.getImageName(), "drawable-nodpi", mContext.getPackageName()));
+        Glide.with(mContext)
+                .load(mContext.getResources()
+                        .getIdentifier(genre.getImageName(), "drawable", mContext.getPackageName()))
+                .into(holder.genreImage);
+        System.out.println("--zdasd->>> " + genre.getImageName());
         holder.genreCard.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

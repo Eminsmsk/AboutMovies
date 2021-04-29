@@ -20,10 +20,12 @@ public class AboutActivity extends AppCompatActivity {
         setContentView(R.layout.activity_about);
 
         toolbarAbout = findViewById(R.id.toolbarAbout);
+        setSupportActionBar(toolbarAbout);
         imageViewBackAbout = findViewById(R.id.imageViewBackAbout);
         toolbarAbout.setTitle("About Developer");
-        toolbarAbout.setTitleMargin(200, 0, 0, 0);
+        toolbarAbout.setTitleMargin(300, 0, 0, 0);
         toolbarAbout.setTitleTextColor(getResources().getColor(R.color.myPurple));
+
 
         imageViewBackAbout.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -59,7 +59,7 @@
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="8dp"
                 android:layout_marginRight="8dp"
-                android:layout_marginBottom="8dp"
+                android:layout_marginBottom="16dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textColor="#A6A1A1"

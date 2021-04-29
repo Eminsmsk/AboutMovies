@@ -22,6 +22,10 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 import com.bumptech.glide.Glide;
+import com.bumptech.glide.GlideBuilder;
+import com.bumptech.glide.load.DecodeFormat;
+import com.bumptech.glide.request.RequestOptions;
+import com.bumptech.glide.request.target.Target;
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
@@ -115,7 +119,16 @@ public class DetailsActivity extends YouTubeBaseActivity {
                                     response.getString("backdrop_path"),
                                     response.getString("overview"),
                                     response.getString("original_language"));
+
+
                             Glide.with(getApplicationContext()).load("https://image.tmdb.org/t/p/w500" + m.getPosterPath())
+
+                                    //        .format(DecodeFormat.PREFER_ARGB_8888)
+                                    //.override(Target.SIZE_ORIGINAL))
+                                    .dontTransform()
+
+                                    //.fitCenter()
+                                    .format(DecodeFormat.PREFER_ARGB_8888)
                                     .into(imageViewDetails);
                             textViewMovieName.setText(m.getTitle());
                             textViewDescription.setText(m.getOverview());

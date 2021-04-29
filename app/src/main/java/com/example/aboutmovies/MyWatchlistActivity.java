@@ -44,7 +44,7 @@ public class MyWatchlistActivity extends AppCompatActivity {
         watchlistRV = findViewById(R.id.genresRV);
         toolbar = findViewById(R.id.toolbar);
         toolbar.setTitle("My Watchlist");
-        toolbar.setTitleMargin(192, 0, 0, 0);
+        toolbar.setTitleMargin(300, 0, 0, 0);
         toolbar.setTitleTextColor(getResources().getColor(R.color.myPurple));
         imageButtonBack = findViewById(R.id.imageButtonBack);
         watchlistRV.setHasFixedSize(true);
